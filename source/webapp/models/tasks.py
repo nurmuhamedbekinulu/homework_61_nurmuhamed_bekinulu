@@ -11,7 +11,7 @@ class Task(models.Model):
         on_delete=models.RESTRICT, 
         null=False,
         blank=False,
-        default=1
+        default="1"
         )
     title = models.CharField(
         max_length=200,

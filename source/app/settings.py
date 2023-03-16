@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_bootstrap5',
     'webapp',
-    "accounts",
+    'accounts',
 ]
 
 MIDDLEWARE = [
