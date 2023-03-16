@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}Task{% endblock %}
 {% block menu %}
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'task_update' task.pk %}">Редактировать Задачу</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="{% url 'task_delete' task.pk %}">Удалить Задачу</a>
-</li>
+{% if user.is_authenticated %}
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'task_update' task.pk %}">Редактировать Задачу</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'task_delete' task.pk %}">Удалить Задачу</a>
+    </li>
+{% endif %}
 {% endblock %}
 {% block content%}
 <div class="container">

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_bootstrap5',
     'webapp',
+    "accounts",
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_homework_59',
+        'NAME': 'db_homework_61',
         'USER': 'postgres',
         'PASSWORD': '777',
         'HOST': 'localhost',
@@ -127,6 +128,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
