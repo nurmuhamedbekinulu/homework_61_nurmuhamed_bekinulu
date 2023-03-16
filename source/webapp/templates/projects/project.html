@@ -1,12 +1,14 @@
-{% extends 'projects/base.html' %}
+{% extends 'base.html' %}
 {% block title %}Project{% endblock %}
 {% block menu %}
+{% if user.is_authenticated %}
 <li class="nav-item">
     <a class="nav-link" href="{% url 'project_update' project.pk %}">Редактировать Задачу</a>
 </li>
 <li class="nav-item">
     <a class="nav-link" href="{% url 'project_delete' project.pk %}">Удалить Задачу</a>
 </li>
+{% endif %}
 {% endblock %}
 {% block content%}
 <div class="container">

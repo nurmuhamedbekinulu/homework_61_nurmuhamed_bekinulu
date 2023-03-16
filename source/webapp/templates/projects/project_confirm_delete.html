@@ -1,7 +1,9 @@
-{% extends 'projects/base.html' %}
+{% extends 'base.html' %}
 {% block title %}Project confirm delete{% endblock %}
 {% block menu %}
+{% if user.is_authenticated %}
 <a class="nav-link" href="{% url 'project_update' project.pk %}">Редактировать Проект</a>
+{% endif %}
 {% endblock %}
 {% block content%}
 <div class="container">
