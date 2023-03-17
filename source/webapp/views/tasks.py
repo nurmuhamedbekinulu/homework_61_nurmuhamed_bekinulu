@@ -18,9 +18,6 @@ class TaskCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         task.project = project
         task.save()
         return redirect('project_detail', pk=project.pk)
-    
-
-
 
 
 class TaskDetail(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
