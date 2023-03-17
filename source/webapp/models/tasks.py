@@ -7,12 +7,11 @@ from webapp.models.projects import Project
 
 class Task(models.Model):
     project = models.ForeignKey(
-        Project,
-        on_delete=models.RESTRICT, 
-        null=False,
-        blank=False,
-        default="1"
-        )
+        'webapp.Project',
+        related_name='tasks',
+        on_delete=models.CASCADE,
+        verbose_name='Задача'
+    )
     title = models.CharField(
         max_length=200,
         null=False,
