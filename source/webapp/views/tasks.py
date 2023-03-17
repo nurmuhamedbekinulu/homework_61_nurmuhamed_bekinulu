@@ -12,12 +12,15 @@ class TaskCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     model = Task
     form_class = TaskForm
 
-def form_valid(self, form):
+    def form_valid(self, form):
         project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
         task = form.save(commit=False)
         task.project = project
         task.save()
         return redirect('project_detail', pk=project.pk)
+    
+
+
 
 
 class TaskDetail(SuccessMessageMixin, LoginRequiredMixin, DeleteView):

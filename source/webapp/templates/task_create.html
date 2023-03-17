@@ -4,7 +4,7 @@
 <h1>Создать новую задачу</h1>
 <div class="form  col-8">
     <form action="{% url 'task_add' %}" method="post">
-        {% include 'partial/task_form_2.html' with action_url="" form_method='post' %}
+      {% include 'partial/task_form_2.html' with button_text='Создать' %}
     </form>
 </div>
 {% endblock %}
