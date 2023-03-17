@@ -20,13 +20,6 @@ class ProjectDetail(DeleteView):
     template_name = 'projects/project.html'
     model = Project
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     project = Project.objects.get('id')
-    #     tasks = Task.objects.filter(project=project)
-    #     context['tasks'] = tasks
-    #     return context
-
 
 class ProjectUpdateView(UpdateView):
     template_name = 'projects/project_update.html'

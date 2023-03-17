@@ -3,10 +3,13 @@
 {% block menu %}
 {% if user.is_authenticated %}
 <li class="nav-item">
-    <a class="nav-link" href="{% url 'project_update' project.pk %}">Редактировать Задачу</a>
+    <a class="nav-link" href="{% url 'project_update' project.pk %}">Редактировать Проект</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="{% url 'project_delete' project.pk %}">Удалить Задачу</a>
+    <a class="nav-link" href="{% url 'project_delete' project.pk %}">Удалить Проект</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" aria-current="page" href="{% url 'task_add' %}">Добавить Задачу</a>
 </li>
 {% endif %}
 {% endblock %}
